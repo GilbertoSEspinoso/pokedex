@@ -1,6 +1,6 @@
 function convertPokemonToLi(pokemon) {
   return `
-  <li class="pokemon">
+  <li class="pokemon ${pokemon.principalType}">
           <span class="number">#${pokemon.pkNumber}</span>
           <span class="name">${pokemon.name}</span>
 
@@ -8,7 +8,8 @@ function convertPokemonToLi(pokemon) {
             <ol class="types">
               ${pokemon.types
                 .map(
-                  (principalType) => `<li class="type">${principalType}</li>`
+                  (principalType) =>
+                    `<li class="type ${principalType}">${principalType}</li>`
                 )
                 .join("")}
             </ol>
