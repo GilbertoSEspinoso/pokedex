@@ -9,7 +9,7 @@ function loadPokemonItem(offset, limit) {
       .map(
         (pokemon) => `
         <li class="pokemon ${pokemon.principalType}">
-        <span class="number">#${pokemon.pkNumber}</span>
+        <span class="number">#${pokemon.pkNumber.toString().padStart(3,'0')}</span>
         <span class="name">${pokemon.name}</span>
 
         <div class="detail">
