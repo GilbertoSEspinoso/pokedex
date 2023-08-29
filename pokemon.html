@@ -20,19 +20,28 @@
 
     <div class="top">
       <div class="top-bar">
-        <h1 class="pokemon-name">Bulbasaur</h1>
-        <span class="pokemon-number">#001</span>
+        <h1 class="pokemon-name" id="detailName"></h1>
+        <span class="pokemon-number" id="detailNumber">#</span>
       </div>
       <div class="poke-image-placeholder">
-        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg" class="pokemon-image" alt="Bulbasaur">
+        <img src="" class="pokemon-image" id="detailImage" alt="">
       </div>
     </div>
 
     <div class="data">
-        <div class="pokemon-types">
+        <!-- <div class="pokemon-types">
           <span class="pokemon-type">Grass</span>
           <span class="pokemon-type">Poison</span>
-        </div>
+        </div> -->
+
+
+
+        <ol class="pokemon-types">
+          <li class="pokemon-type">Grass</li>
+          <li class="pokemon-type">Poison</li>
+        </ol>
+
+        
 
         <h4 style="color: rgb(116, 203, 72);">Base Stats</h4>
 
@@ -99,8 +108,9 @@
     </div>
   </div>
   
+    <!-- Javascript -->
     <script src="/assets/js/pokemon-model.js"></script>
     <script src="/assets/js/poke-api.js"></script>
-    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/pokeDetails.js"></script>
 </body>
 </html>
