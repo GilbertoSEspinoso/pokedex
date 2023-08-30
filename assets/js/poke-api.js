@@ -33,5 +33,5 @@ pokeApi.getPokemons = (offset = 0, limit = 6) => {
     .then((pokemonDetails) => pokemonDetails);
 };
 
-// Devo fazer um requisição só para busca de um pokemon com detalhes?
+
 
