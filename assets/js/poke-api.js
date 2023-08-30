@@ -35,3 +35,4 @@ pokeApi.getPokemons = (offset = 0, limit = 6) => {
 
 
 
+

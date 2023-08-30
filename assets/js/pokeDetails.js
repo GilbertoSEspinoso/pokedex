@@ -1,18 +1,15 @@
-
-
 const params = new URLSearchParams(window.location.search);
 const pokemonId = params.get("id");
 
 const pokeUrl = `https://pokeapi.co/api/v2/pokemon/${pokemonId}`;
 
 function convertPokemonTypes(pokemonsTypes){
-  return pokemonsTypes.map((typeSlot) => `<li class="pokemon-type">${typeSlot.type.name}</li>`)
+  return pokemonsTypes.map((typeSlot) => `<span class="pokemon-type">${typeSlot.type.name}</span>`)
 }
-
 
 function convertPokemonToHtml(pokemon){
   return `
-    <div class="menu">
+      <div class="menu">
         <a href="./index.html" class="menu-btn" >
           <img src="./assets/img/icons8-back-white.png" alt="Back"/>
         </a>
@@ -30,9 +27,66 @@ function convertPokemonToHtml(pokemon){
       </div>
     
       <div class="data">
-          <ol class="pokemon-types">
+          <div class="pokemon-types">
               ${convertPokemonTypes(pokemon.types).join('')}
-          </ol>  
+          </div>
+          
+          <h4 style="color: rgb(116, 203, 72);">Base Stats</h4>
+
+        <div class="data-stats">           
+          <div class="data-stats-row">
+                <div class="stats-desc">HP</div>
+                <div class="stats-number">045</div>
+                <div class="stats-bar">
+                  <div class="bar-outer">
+                    <div class="bar-inner" style="width: 45%"></div>
+                  </div>
+                </div>
+          </div>
+          <div class="data-stats-row">
+              <div class="stats-desc">ATK</div>
+              <div class="stats-number">049</div>
+              <div class="stats-bar">
+                <div class="bar-outer">
+                  <div class="bar-inner" style="width: 49%"></div>
+                </div>
+              </div>
+          </div>
+          <div class="data-stats-row">
+              <div class="stats-desc">DEF</div>
+              <div class="stats-number">049</div>
+              <div class="stats-bar">
+                <div class="bar-outer">
+                  <div class="bar-inner" style="width: 49%"></div>
+                </div>
+          </div>
+          </div>
+            <div class="data-stats-row">
+              <div class="stats-desc">S.ATK</div>
+              <div class="stats-number">065</div>
+              <div class="stats-bar">
+                <div class="bar-outer">
+                  <div class="bar-inner" style="width: 65%"></div>
+                </div>
+              </div>
+          </div>
+          <div class="data-stats-row">
+              <div class="stats-desc">S.DEF</div>
+              <div class="stats-number">065</div>
+              <div class="stats-bar">
+                <div class="bar-outer">
+                  <div class="bar-inner" style="width: 65%"></div>
+                </div>
+              </div>
+          </div>
+          <div class="data-stats-row">
+            <div class="stats-desc">SPD</div>
+            <div class="stats-number">045</div>
+            <div class="stats-bar">
+              <div class="bar-outer">
+                <div class="bar-inner" style="width: 45%"></div>
+              </div>
+          </div>
       </div>
     `
 }
@@ -41,19 +95,12 @@ const pokemonPerfil = document.getElementById('pokemonPerfil')
 
 fetch(pokeUrl)
   .then(response => response.json())
-  .then(pokemonData => {
+  .then(pokemonData => { 
     const pokemon = pokemonData; // Atribui os dados do pokémon à constante "pokemon"
-    console.log('Dados do Pokémon:', pokemon);
     pokemonPerfil.innerHTML = convertPokemonToHtml(pokemon)
   }).catch((error) => console.error(error));
-
- 
-
     
         
-  
-
-
 
 
 
