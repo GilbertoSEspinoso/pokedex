@@ -1,0 +1,179 @@
+/* item 1 ------------------------------------------- */
+/* Coloquei no Global */
+
+.pokedex{
+  margin-top: 40px;
+}
+
+/* item 2 ------------------------------------------- */
+.title{
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+  padding-top: 10px;
+  border-top-right-radius: 2rem;
+}
+.title a img{
+  width: 70%;
+  padding: 5px;
+}
+.btn:hover{
+  opacity:0.2;
+}
+.poke-name{
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+.poke-number{
+  font-size: 0.875rem;
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+/* item 3 ------------------------------------------- */
+.top{
+  
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  align-self: stretch;
+}
+/* < ------------------------------------ teste */
+.teste{
+  background: url(../img/pokebola.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+
+.image-pokemon{
+  transform: translateY(4rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.image-pokemon img{
+  max-height: 230px;
+  max-width: 350px;
+}
+.poke-types{
+  gap: 1rem;
+  transform: translateY(5rem);
+  display: flex;
+  justify-content: center;
+}
+.poke-type{
+  color: #fff;
+  filter: brightness(1.1);
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 0.2rem 1rem;
+  margin: .25rem 0;
+  border-radius: 1rem;  
+  border: 0.08rem solid #fff;
+}
+
+/* item 4 ------------------------------------------- */
+.status{
+  border: 1px solid green;
+  background-color: #d7d9d6;
+  height: 400px;
+}
+.base-stats{
+  text-align: center;
+  font-weight: bold;
+  color: #1C1C1C;
+  margin: 100px 0 20px;
+}
+.data-stats{
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+}
+.data-stats-row{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.stats-desc, .stats-number{
+  width: 15%;
+}
+.stats-desc{
+  color:  #1C1C1C;
+  font-weight: bold;
+  text-align: right;
+  padding-right: 0.5rem;
+  border-right: 2px solid gray;
+}
+.stats-number{
+  padding-left: 0.6rem;
+}
+.stats-bar{
+  width: 60%;
+  display: flex;
+  align-items: center;
+}
+.bar-outer{
+  background-color: rgb(116, 203, 72, 0.3);
+  display: flex;
+  width: 100%;
+  height: 0.4rem;
+  border-radius: 0.5rem;
+}
+.bar-inner{
+  background-color: rgb(116, 203, 72);
+  width: 40%;
+  border-radius: 0.5rem;
+}
+
+/* Responsividade  ---------------------------------------- */
+
+@media screen and (min-width: 600px) {
+  .top {
+    width: 530px;
+    margin-right: auto;
+    margin-left: auto;
+    flex-direction: row;
+  }
+  .title{
+    width: 530px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 0;
+  }
+  .poke-types {
+    transform: translateY(10rem);
+  }
+  .status {
+    height: 300px;
+    width: 530px;
+  }
+  .poke-type {
+    font-size: 1.3rem;
+    padding: 0.5rem 2rem;
+    border-radius: 0.5rem;
+  } 
+}
+@media screen and (max-width:599px){
+  .pokedex{
+    margin-top: 0px;
+    width: 350px;
+  }
+  .title{
+    border-top-right-radius: 0;
+  }
+  .status{
+    border-bottom-left-radius: 2rem;
+  }
+  .teste{
+    display: block;
+  }
+}
